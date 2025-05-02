@@ -1,0 +1,14 @@
+name: InstallTest
+
+on: [push]
+
+jobs:
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test PowerShell scripts
+        shell: pwsh
+        run: |
+          ./install_scripts/choco_installer.ps1
+          ./install_scripts/devtools_installer.ps1
